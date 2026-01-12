@@ -11,7 +11,7 @@ for i in range(0, msg[0]):
    print(msg[1][i])
 
 ans = check(msg)
-if ans == True:
+if ans:
    print("notifying!!!")
    send_telegram_msg(msg)
 
