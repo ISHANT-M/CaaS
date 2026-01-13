@@ -3,7 +3,7 @@ name: CG Fetcher Automation
 on:
   schedule:
     # GitHub Actions minimum reliable interval is usually 5 minutes. 
-    # Attempting 3 minutes often results in skipped runs. Set to 5 for stability.
+    # Set to 5 mins for stability.
     - cron: '*/5 * * * *'
   workflow_dispatch: # Allows you to manually trigger the button on GitHub
 
@@ -22,7 +22,6 @@ jobs:
           ref: main
 
       # 2. Fetch the latest data.txt from the storage branch (value_updates)
-      # If the branch doesn't exist yet (first run), we skip this.
       - name: Restore Persistence Data
         continue-on-error: true
         run: |
