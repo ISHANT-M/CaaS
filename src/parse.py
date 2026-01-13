@@ -1,6 +1,6 @@
 from bs4 import BeautifulSoup
 def make_sense(html_doc):
-    if html_doc == None:
+    if not html_doc:
         return (-1, [])
     soup = BeautifulSoup(html_doc, 'html.parser')
     soup.find("tbody")
