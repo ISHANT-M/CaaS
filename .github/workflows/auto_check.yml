@@ -62,4 +62,5 @@ jobs:
           file_pattern: data.txt
           # We use force push because we are managing this branch as a data storage
           push_options: '--force'
+          skip_checkout: true
           skip_dirty_check: false

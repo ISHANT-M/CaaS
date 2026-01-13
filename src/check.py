@@ -16,6 +16,7 @@ def check(tup):
                 return True
     except Exception as e:
         print(f"An error occurred: {e}")
+        print("Forcefully updating to fetched content!")
         fp.close()
         update(new)
         return True
