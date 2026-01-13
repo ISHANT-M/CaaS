@@ -26,8 +26,7 @@ jobs:
       - name: Restore Persistence Data
         continue-on-error: true
         run: |
-          git fetch origin value_updates:value_updates || echo "No value_updates branch found yet."
-          git checkout value_updates -- data.txt || echo "No existing data.txt found in storage."
+          curl -f -sO https://raw.githubusercontent.com/ISHANT-M/CaaS/refs/heads/value_updates/data.txt || echo -n 0 > data.txt
 
       # 3. Setup Python
       - name: Set up Python
