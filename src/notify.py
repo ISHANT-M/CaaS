@@ -25,7 +25,7 @@ def send_telegram_msg(messages):
         print(f"Failed to send message: {e}")
 
 
-    for message in messages[1]:
+    for message in messages:
         url = f"https://api.telegram.org/bot{token}/sendMessage"
         payload = {
             "chat_id": chat_id,
