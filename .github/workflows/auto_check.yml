@@ -25,7 +25,10 @@ jobs:
       - name: Restore Persistence Data
         continue-on-error: true
         run: |
-          curl -f -sO https://raw.githubusercontent.com/ISHANT-M/CaaS/refs/heads/value_updates/data.txt || echo -n "-1: " > data.txt
+          curl -f -sO "https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/refs/heads/value_updates/data.txt" || {
+            echo "Couldn't find the old data file! Using default values..."
+            echo -n "-1: " > data.txt
+          }
 
       # 3. Setup Python
       - name: Set up Python
