@@ -1,3 +1,3 @@
-environs
-requests
-beautifulsoup4
+requests==2.32.5
+beautifulsoup4==4.14.3
+environs==14.5.0

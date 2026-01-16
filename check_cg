@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+atexit() {
+    echo "Exiting..."
+    exit 1
+}
+trap atexit SIGINT
+
+source .venv/bin/activate
+
+export USE_WEBKIOSK_INTRA=1
+
+while true; do
+    python main.py
+done

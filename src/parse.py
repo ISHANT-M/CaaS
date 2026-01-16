@@ -13,7 +13,6 @@ def hash_cg_data(data: list[list[str]]) -> str:
         # This ensures [['a'], ['b']] is distinct from [['a', 'b']]
         inner_str += '\0\0' 
         
-        # 3. Update the hash
         sha256.update(inner_str.encode('utf-8'))
 
     return sha256.hexdigest()
@@ -35,7 +34,7 @@ def make_sense(html_doc):
         points_secured = soup.select_one(f"#table-1 > tbody > tr:nth-child({i}) > td:nth-child(4)").text
         sgpa = soup.select_one(f"#table-1 > tbody > tr:nth-child({i}) > td:nth-child(5)").text
         cgpa = soup.select_one(f"#table-1 > tbody > tr:nth-child({i}) > td:nth-child(6)").text
-        message = message + sem_code + f" ({points_secured:>5} / {sem_credits:>4})" + " : " + sgpa + " | " + cgpa + "."
+        message += f"{sem_code} ({points_secured:>5} / {sem_credits:>4}) : {sgpa} | {cgpa}"
         msg.append(message)
 
         ## Maintain whole sem table
