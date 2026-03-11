@@ -92,4 +92,3 @@ By default, workflows in forked repositories are disabled.
    - Compares it with `data.txt`.
    - If changed -> Sends Telegram Message & Updates `data.txt`.
 5. **Save State**: If `data.txt` was updated, the workflow pushes the new file back to the `value_updates` branch using `git-auto-commit`, ready for the next run.
-
